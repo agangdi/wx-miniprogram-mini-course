@@ -1,0 +1,39 @@
+{
+  "file": "views/Users.vue",
+  "getList": {
+    "model": "userModel",
+    "action": "list"
+  },
+  "search": [
+    {
+      "type": "input",
+      "col": "nickName"
+    }
+  ],
+  "table": "table",
+  "tableCols": [
+    {
+      "col": "id"
+    },
+    {
+      "col": "nickName"
+    },
+    {
+      "col": "avatarUrl"
+    }
+  ],
+  "tableOpeCol": {
+    "buttons": [
+      {
+        "type": "text",
+        "action": "onForbidden(scope.row)",
+        "name": "封标",
+        "class": "text-warning"
+      }
+    ]
+  },
+  "page": 1,
+  "mixins": [
+    "pageMixin"
+  ]
+}
