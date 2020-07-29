@@ -1,0 +1,41 @@
+{
+  "file": "modals/EditActivity.vue",
+  "form": [
+    {
+      "type": "inputWithLabel",
+      "col": "name"
+    },
+    {
+      "type": "inputWithLabel",
+      "col": "sign_from"
+    },
+    {
+      "type": "inputWithLabel",
+      "col": "sign_to"
+    }
+  ],
+  "mixins": [
+    "modalClose"
+  ],
+  "baseModal": {
+    "title": "编辑活动"
+  },
+  "methods": [
+    {
+      "fun": "onSubmit"
+    }
+  ],
+  "watches": [
+    "obj"
+  ],
+  "imports": [
+    {
+      "type": "api",
+      "model": "activityModel"
+    },
+    {
+      "type": "element",
+      "model": "Message"
+    }
+  ]
+}
