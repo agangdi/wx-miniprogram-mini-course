@@ -1,0 +1,48 @@
+{
+  "file": "views/Activities.vue",
+  "getList": {
+    "model": "activityModel",
+    "action": "list"
+  },
+  "search": [
+    {
+      "type": "input",
+      "col": "name"
+    }
+  ],
+  "table": "table",
+  "tableCols": [
+    {
+      "col": "id"
+    },
+    {
+      "col": "name"
+    },
+    {
+      "col": "sign_from"
+    },
+    {
+      "col": "sign_to"
+    }
+    ,{
+      "col": "sign_count" 
+    }
+  ],
+  "tableBar": [
+    "EditActivity"
+  ],
+  "tableOpeCol": {
+    "buttons": [
+      {
+        "type": "text",
+        "action": "onDel(scope.row)",
+        "name": "删除",
+        "class": "text-warning"
+      }
+    ]
+  },
+  "page": 1,
+  "mixins": [
+    "pageMixin"
+  ]
+}
