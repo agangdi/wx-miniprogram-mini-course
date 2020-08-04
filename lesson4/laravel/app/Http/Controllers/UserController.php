@@ -64,14 +64,12 @@ class UserController extends Controller
                 $user = new User();
                 $user->fill([
                     'nickName' => '',
-                    'avatarUrl' => ''
+                    'avatarUrl' => '',
+                    'stat' => 1,
+                    'openid' => $res['openid']
                 ]);
+                $user->save();
             }
-            $user->fill([
-                'openid' => $res['openid'],
-                'stat' => 1
-            ]);
-            $user->save();
             return [
                 'code' => 0, 
                 'data' => [
