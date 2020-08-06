@@ -28,7 +28,7 @@
 			}
 		},
 		onLoad() {
-			this.nickName = uni.getStorageInfoSync('nickName')
+			this.nickName = uni.getStorageSync('nickName')
 			this.getUserInfo();
 			this.getActs();
 			qqmapsdk = new QQMapWX({
