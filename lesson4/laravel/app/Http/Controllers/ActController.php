@@ -14,13 +14,14 @@ class ActController extends Controller
     public function index(Request $request) {
         $name = $request->get('name', '');
         $page = intval($request->get('page', 1));
+        $pageSize = intval($request->get('page_size', ''));
         if(!empty($name)) {
             $qeury = Activity::where('name', $name);
         }else{
             $qeury = Activity::whereRaw('1 = 1');
         }
         $count = $qeury->count();
-        $models = $qeury->offset( ($page -1) * 10)->limit(10)->get();
+        $models = $qeury->offset( ($page -1) * $pageSize)->limit($pageSize)->get();
         foreach($models as $model) {
             $model->sign_count = Sign::where('act_id', $model->id)->count();
         }
